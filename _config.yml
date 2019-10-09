@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hu Yu's Blog
-subtitle: Technical Articles About Software Engineering.
-description:
-keywords: Software Engineering
+title: Hu Yu's Personal Blog
+subtitle: Technical Articles about Computing and Software.
+description: 
+keywords: Software, Computing
 author: Hu Yu
 language: en
 timezone:
@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: jane
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

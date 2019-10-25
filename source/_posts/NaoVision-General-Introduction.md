@@ -4,75 +4,75 @@ date: 2019-10-09 23:22:44
 tags:
 ---
 
-# NAOVision 帮助文档
+# NaoVision Concise Document
 
-## 项目概要
+## Project Summary
 
-### 简介
+### Introduction
 
-NaoVision是实物NAO组的有关于NAO机器人在RoboCup比赛中的专用视觉方法解决方案。NaoVision使用C++编写，旨在解决NAO机器人在Bhuman系统在原始的固定阈值方案下对于场地的颜色判别容易由光线等因素干扰，导致在实际的比赛过程NAO机器人中对于场地内的物体（特别是足球）的识别不够快速、准确的问题。
+NaoVision is a dedicated NAO group of dedicated vision method solutions for NAO robots in the RoboCup competition. NaoVision was written in C++ and is designed to solve the problem that NAO robots in the Bhuman system under the original fixed threshold scheme for the color discrimination of the field is easily interfered by light and other factors, resulting in the actual game NAO robot for the objects in the field (especially football) The identification is not fast enough and accurate.
 
-在对于足球场地的判断上，相对应的，NaoVision采取OTSU算法，实现对于图像处理阈值的自动调整，能够不受光线阴影的影响，在大多数情况下正确地识别并标记出场地像素。
+Correspondingly, for the judgment of the football field, NaoVision adopts the OTSU algorithm to realize the automatic adjustment of the image processing threshold, and is able to correctly identify and mark the field pixels in most cases without being affected by the light shadow.
 
-在场地颜色判别的基础上，NaoVision通过在图片中建立扫描线。通过对扫描线所在的像素进行采样与扫描，确定场地与非场地的分界点。而后通过在分界点之间进行连线，将图片划分为场地部分与非场地部分。
+Based on the color discrimination of the site, NaoVision creates a scan line in the picture. The boundary between the site and the non-site is determined by sampling and scanning the pixels where the scan line is located. The picture is then divided into part and non-site parts by connecting between the demarcation points.
 
-一般而言，为了降低计算开销，NaoVision只对于属于场地部分的图片像素进行计算。在确定计算范围之后，NaoVison将在计算范围内建立间隔更小的扫描线，针对计算范围内部的物体进行更加细致的扫描与探测。
+In general, in order to reduce the computational overhead, NaoVision only calculates the picture pixels belonging to the site part. After determining the calculation range, NaoVison will create smaller scan lines within the calculation range for more detailed scanning and detection of objects within the calculation range.
 
-而后，NaoVision有限对于场地内的圆形物体进行探测。程序将在扫描线上进行均匀的跳跃扫描，在探测到计算范围内不属于场地的像素后，在该像素周围随机选取三个不共线的点。以这三个点为基点，分别朝向八个方向进行扫描，知道探测到场地像素后返回。而后判断这24个有效点是否在一个圆上，并同时计算出圆的圆心坐标及其半径。将该圆加入候选队列后程序将继续对计算区域剩下的部分进行扫描。
+Then, NaoVision limited the detection of circular objects in the field. The program will perform a uniform skip scan on the scan line. After detecting pixels that do not belong to the field within the calculation range, three non-collinear points are randomly selected around the pixel. Based on these three points, the scanning is performed in eight directions, and it is known that the pixels of the field are detected and returned. Then judge whether the 24 effective points are on a circle, and simultaneously calculate the center coordinates of the circle and its radius. After the circle is added to the candidate queue, the program will continue to scan the rest of the calculation area.
 
-（未完待续）
+(To be continued)
 
-### 主要组成部分
+### Main Component
 
-在NaoVision的解决方案下（采用 Visual Studio 2019开发），有
+Under NaoVision's solution (developed with Visual Studio 2019), there is
 
-- **NAOFastTools** 核心工具组工程
-- **NFTCommandLineTools** 通用命令行工具
-- **NFTDeamon** 守护进程
-- **NFTGUI** 调试界面工程
-- **NFTTest** Opencv对接工具组工程
-- **UnitTest** 单元测试工程
+- **NAOFastTools** Core Toolset
+- **NFTCommandLineTools** Common Command Line Tools
+- **NFTDeamon** Daemon
+- **NFTGUI** Debugging Interface
+- **NFTTest** OpenCV Docking Toolset
+- **UnitTest** Unit Test Project
 
-### 简要流程简介
+### Brief Process Introduction
 
-问题说明：由于将NFT与BHuman的直接嵌入方案遇到了种种问题，本项目拟采用独立进程伴随BHuman的方式。
+Problem Description: Due to various problems with the direct embedding scheme of NFT and BHuman, this project intends to adopt the independent process with BHuman.
 
-在实际的比赛过程中**NAOFastTools框架**被**NFTDeamon守护进程**驱动，与Naoqi、BHuman并行运行在NAO机器人的系统中。**NFTDeamon守护进程**通过共享内存的方式与BHuman通信，从BHuman获取摄像头数据，经过计算后，向BHuman传递视觉的修正信息。在平时的调试过程中，可以使用**NFTCommandLineTools通用命令行工具**或者**NFTGUI调试界面**与**NFTDeamon守护进程**建立连接来监视与调整**NAOFastTools框架**或者**BHuman**的运行状态与相关参数。
+In the actual game process, the **NAOFastTools Framework** is driven by the **NFTDeamon**, running in parallel with Nao qi and BHuman in the NAO robot system. **NFTDeamon** communicates with BHuman by sharing memory. Camera data is obtained from BHuman. After calculation, visual correction information is transmitted to BHuman. In the usual debugging process, you can use the **NFTCommandLineTools  ** or **NFTGUI Debug Interface** to establish a connection with the **NFTDeamon** to monitor and adjust the **NAOFastTools Framework** or **BHuman ** Operating status and related parameters.
 
-（未完待续）
+(To be continued)
 
-#### 组成部分简介
+#### Introduction To Each Component
 
-##### 1. NAOFastTools核心工具组工程
+##### 1. NAOFastTools Core Toolset
 
-NAOFastTools核心工具组（以下简称NFT）中存放着该解决方案的进行图像处理与储存的核心框架以及对应的图形处理模块，是该解决方案的核心工程。该工程遵循C++14标准，少部分代码含有C++14的特性（安装有BHuman2018的系统含有支持C++14的libstdc++.so）。NFT最终生成在Windows与Linux下是对应的静态链接库（NAOFastTools.lib与NAOFastTools.a）。NFT通过与其他程序链接来发挥作用。除了在VS环境下进行编译，NFT框架还可以在Linux环境下进行编译，前提是正确安装clang、make、cmake工具。下面是NFT中几个特别重要的常用类与函数（包括不限于下列）的极其简单的介绍（实际使用需要看代码理解）。
+The core framework for image processing and storage of the solution and the corresponding graphics processing module stored in the NAOFastTools Core Tools Group (hereinafter referred to as NFT) is the core project of the solution. The project follows the C++14 standard, and a small portion of the code contains C++14 features (the system with BHuman2018 has libstdc++.so that supports C++14). NFT eventually generates a static link library (NAOFastTools.lib and NAOFastTools.a) that corresponds to Windows and Linux. NFT works by linking with other programs. In addition to compiling in the VS environment, the NFT framework can also be compiled in a Linux environment, provided that the clang, make, and cmake tools are properly installed. The following is an extremely simple introduction to several of the most important common classes and functions in the NFT (including not limited to the following) (the actual use requires code understanding).
 
-OperaMatrix是代理类，是对于Eigen线性代数库的Matrix类的一层代理访问。除了提供代理访问服务之外，它还提供智能指针服务，能够根据引用计数自动创建与释放Matrix对象。一个或者多个OperaMatrix对应一个Matrix对象。OperaMatrix对象提供多种构造函数，满足用户在大多数情况下的需要。OperaMatrix中的元素在内存中按照列优先的方式储存，用户可以通过getData()接口直接获得指向矩阵首元素的指针。OperaMatrix对应的矩阵的行数与列数能够使用getRows()与getCols()获取。
+OperaMatrix is a proxy class that is a layer of proxy access to the Matrix class of the Eigen linear algebra library. In addition to providing proxy access services, it also provides a smart pointer service that automatically creates and releases Matrix objects based on reference counts. One or more OperaMatrix corresponds to a Matrix object. OperaMatrix objects provide a variety of constructors to meet the needs of users in most situations. The elements in OperaMatrix are stored in memory in a column-first manner, and the user can directly get a pointer to the first element of the matrix via the getData() interface. The number of rows and columns of the matrix corresponding to OperaMatrix can be obtained using getRows() and getCols().
 
-Image类是图像的储存载体，它含有一个或者多个OpreaMatrix对象，对应图像的多个通道。一个OperaMatrix储存相应的一个通道的像素数据。正常情况下，像素数据的类型（PIXEL_TYPE）定义在NFT.h中。图像的通道数量能够使用getColumns()方法获取，某个通道的引用可以直接使用[]运算符获得。图像的高与宽则使用getHeight()与getWidth()方法获取。
+The Image class is a storage vector for images that contains one or more OpreaMatrix objects, corresponding to multiple channels of the image. An OperaMatrix stores pixel data for a corresponding channel. Normally, the type of pixel data (PIXEL_TYPE) is defined in NFT.h. The number of channels in an image can be obtained using the getColumns() method, and a reference to a channel can be obtained directly using the [] operator. The height and width of the image are obtained using the getHeight() and getWidth() methods.
 
-ImageYUV422类继承自Image类，它提供压缩颜色空间YUV422的储存。需要注明，它有且只有一个通道。在具体的内存实现上，它将三个通道的像素数据压缩到一个通道进行储存。如果需要获取某个像素的Y、Cr、Cb值，则可以调用getY(int, int)、getCr(int ,int)、getCb(int, int)进行访问。进一步，如果需要修改图片中的某个像素的Y、Cr、Cb值，则调用相应的setter并提供像素的坐标参数即可。
+The ImageYUV422 class inherits from the Image class, which provides storage for the compressed color space YUV422. Need to note that it has one and only one channel. In a specific memory implementation, it compresses the pixel data of three channels into one channel for storage. If you need to get the Y, Cr, and Cb values of a pixel, you can call getY(int, int), getCr(int, int), getCb(int, int) to access it. Further, if it is necessary to modify the Y, Cr, and Cb values of a certain pixel in the picture, the corresponding setter is called and the coordinate parameters of the pixel are provided.
 
-ImageColored类继承自ImageYUV422类，也有且只有一个通道。它主要提供单通道图像的储存功能，是场地颜色判别模块的输出结果的储存载体。它也是其他很多视觉模块的输入数据的储存载体。它禁用了ImageYUV422父类的所有的有关于YUV颜色空间的操作的特性。
+The ImageColored class inherits from the ImageYUV422 class and has one and only one channel. It mainly provides a single-channel image storage function and is a storage carrier for the output of the site color discrimination module. It is also a storage carrier for input data for many other vision modules. It disables all of the features of the ImageYUV422 parent class that have operations on the YUV color space.
 
-ImageSaver类是Image类的储存服务类，能够将Image对象中的数据正确储存在Windows或者Linux系统中的文件中（.nftd后缀）。它也能够通过读取.nftd格式的文件来构建相应的Image对象。
+The ImageSaver class is a storage service class for the Image class. It can store the data in the Image object correctly in a file on a Windows or Linux system (.nftd suffix). It can also build the corresponding Image object by reading the file in .nftd format.
 
-（未完待续）
+(To be continued)
 
-##### 2. NFTGUI调试界面工程
+##### 2. NFTGUI Debugging Interface
 
-NFTGUI调试界面基于Qt5，是有关于NAOFastTools的可视化调试界面，能输出进行各个图形处理模块的处理的中间结果及内部相关参数。
+The NFTGUI debugging interface is based on Qt5. It is a visual debugging interface for NAOFastTools. It can output intermediate results and internal related parameters for processing each graphics processing module.
 
-（未完待续）
+(To be continued)
 
-##### 3.NFTTest Opencv对接工具组工程
+##### 3.NFTTest Opencv Docking Toolset
 
-NFTTest Opencv对接工具组是NaoVision框架与OpenCV框架对接的桥梁，它提供了两个框架之间的主要数据结构之间的转换函数，此外，该工程也用于开发过程中的最基础的调试信息输出。
+The NFTTest Opencv Docking Toolset is a bridge between the NaoVision framework and the OpenCV framework. It provides a conversion function between the main data structures between the two frameworks. In addition, the project is also used for the most basic debugging information output during the development process. .
 
-（未完待续）
+(To be continued)
 
-##### 4.UnitTest单元测试工具
+##### 4.UnitTest
 
-基于Google Test测试框架，存放NAOFastTools中的核心框架的单元测试代码，这些代码将保证核心框架能够高效、准确地运行，也方便及时发现框架中的漏洞。
+Based on the Google Test test framework, the unit test code of the core framework in NAOFastTools is stored. This code will ensure that the core framework can run efficiently and accurately, and it is convenient to discover the loopholes in the framework in time.
 
-（未完待续）
+(To be continued)

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="My thoughts on the IoTRecently, I have been studying in the school with heavy tasks. I feel that I have no time to think about it. This is different from the time when I was in junior high school. I h">
+<meta name="keywords" content="Software, Computing">
+<meta property="og:type" content="article">
+<meta property="og:title" content="My thoughts on the Internet of Things">
+<meta property="og:url" content="http://saturneric.cn/2016/10/16/My-thoughts-on-the-Internet-of-Things/index.html">
+<meta property="og:site_name" content="Hu Yu&#39;s Personal Blog">
+<meta property="og:description" content="My thoughts on the IoTRecently, I have been studying in the school with heavy tasks. I feel that I have no time to think about it. This is different from the time when I was in junior high school. I h">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-25T07:02:23.329Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="My thoughts on the Internet of Things">
+<meta name="twitter:description" content="My thoughts on the IoTRecently, I have been studying in the school with heavy tasks. I feel that I have no time to think about it. This is different from the time when I was in junior high school. I h">
+  <link rel="canonical" href="http://saturneric.cn/2016/10/16/My-thoughts-on-the-Internet-of-Things/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>My thoughts on the Internet of Things | Hu Yu's Personal Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hu Yu's Personal Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Technical Articles about Computing and Software.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://saturneric.cn/2016/10/16/My-thoughts-on-the-Internet-of-Things/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hu Yu's Personal Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">My thoughts on the Internet of Things
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2016-10-16 12:42:00" itemprop="dateCreated datePublished" datetime="2016-10-16T12:42:00+08:00">2016-10-16</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-10-25 15:02:23" itemprop="dateModified" datetime="2019-10-25T15:02:23+08:00">2019-10-25</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="My-thoughts-on-the-IoT"><a href="#My-thoughts-on-the-IoT" class="headerlink" title="My thoughts on the IoT"></a>My thoughts on the IoT</h1><p>Recently, I have been studying in the school with heavy tasks. I feel that I have no time to think about it. This is different from the time when I was in junior high school. I have some time to think about things that have nothing to do with learning. After all, I have to think about it.</p>
+<p>However, even in such a tight time, I can’t help but spend some time thinking. The content of thinking is what I discussed in this article today.</p>
+<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>The Internet of Things, this evolving thing, will continue to increase the level of informationization in human society in the future. But now, I believe that the domestic Internet of Things is still immature. First, there is no unified agreement. Second, the concept of the Internet of Things is not profound in China. What is the Internet of Things? Let’s take a look at the definition of Wikipedia:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The Internet of Things (IoT) is an information carrier such as the Internet and traditional telecommunication networks, enabling all ordinary objects that can perform independent functions to realize interconnection and interoperability.</span><br></pre></td></tr></table></figure>
+
+<h2 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h2><p>The key is that all objects that can perform independent functions are interconnected. This shows that on the Internet of Things, all objects connected to the network can be interconnected, exchange information, and then use their own functions and information obtained through the Internet of Things to make the operation more convenient and fast. . Before that, my first thought was smart home. In the smart home, these homes can be controlled by adding communication devices and necessary functional devices to the switches and door locks, and then connecting the wireless host through the mobile phone. In this mode, for security, all communications must be handled by a device like a wireless host. I looked at Taobao, this system and many sellers are selling. Including Xiaomi, etc., have already explored in this regard. But I think that this kind of thinking is actually centering the Internet of Things.</p>
+<p>Centralization naturally has the benefits of centralization and its drawbacks. The advantage is that the principle of manipulation through the wireless host is relatively simple, as long as the mobile phone connected to the WIFI is moved over. And relatively safe. However, think about it. If a hacker breaks a wireless host at home, is he equal to manipulating all the smart homes in your home? All your personal information hackers will have an unobstructed view. And in doing so, the size of the Internet of Things network will be limited. If the Internet has a center, will the Internet still reach today’s level of development? Obviously, the Internet of Things should develop rapidly, and decentralization should be a trend. After decentralization, information can be exchanged between two objects that follow a unified protocol. And each object can be extended to expand this network. As with the TCP/IP protocol, each object can send information, accept information, and transmit information. All we have to do is connect this network to the Internet and integrate it with the Internet to become the new terminal of the Internet. If this can be done, then humans’ ability to acquire information and spread will be greatly enhanced. In this way, all human beings can share information about the world. In this case, each object with a specific function is like getting wisdom. They can get enough information before they can get better. They can share information with each other and then serve humanity better. Engineers can use this web to improve and update their intelligence and reduce the rate of item replacement. In this way, the application of the Internet of Things is not limited to smart homes. As the intelligence of the items expands, the Internet of Things will reach out to all corners. Under this network, each item can not only help humans to complete their intended functions, they are also contributors to Internet information, and they contribute information they know to the Internet and contribute to human society. Such an Internet of Things format will greatly enhance the information level of human society, and information exchange will be greatly accelerated, and life will be more convenient. This is the trend of the development of the Internet of Things. </p>
+<p>But it is unavoidable that it brings privacy issues, protocol issues, and security issues, but it can be prevented, and I will discuss them in the next few articles.</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2016/10/20/My-thoughts-on-the-Internet-of-Things2/" rel="prev" title="My thoughts on the Internet of Things2">
+                  My thoughts on the Internet of Things2 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#My-thoughts-on-the-IoT"><span class="nav-number">1.</span> <span class="nav-text">My thoughts on the IoT</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview"><span class="nav-number">1.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Thoughts"><span class="nav-number">1.2.</span> <span class="nav-text">Thoughts</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Hu Yu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:saturneric@ieee.org" title="E-Mail &amp;rarr; mailto:saturneric@ieee.org" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hu Yu</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/pisces.js?v=7.4.1"></script>
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

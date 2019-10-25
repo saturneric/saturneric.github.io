@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Methods to Solve ProblemIn real life, I have encountered many challenges. When the problem first appeared, I was often surprised and confused. But in calming down the initial analysis of the problem,">
+<meta name="keywords" content="Software, Computing">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Methods to solve problem">
+<meta property="og:url" content="http://saturneric.cn/2017/05/14/Methods-to-solve-problem/index.html">
+<meta property="og:site_name" content="Hu Yu&#39;s Personal Blog">
+<meta property="og:description" content="Methods to Solve ProblemIn real life, I have encountered many challenges. When the problem first appeared, I was often surprised and confused. But in calming down the initial analysis of the problem,">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-25T07:25:21.349Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Methods to solve problem">
+<meta name="twitter:description" content="Methods to Solve ProblemIn real life, I have encountered many challenges. When the problem first appeared, I was often surprised and confused. But in calming down the initial analysis of the problem,">
+  <link rel="canonical" href="http://saturneric.cn/2017/05/14/Methods-to-solve-problem/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Methods to solve problem | Hu Yu's Personal Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hu Yu's Personal Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Technical Articles about Computing and Software.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://saturneric.cn/2017/05/14/Methods-to-solve-problem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hu Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hu Yu's Personal Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Methods to solve problem
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2017-05-14 11:08:30" itemprop="dateCreated datePublished" datetime="2017-05-14T11:08:30+08:00">2017-05-14</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-10-25 15:25:21" itemprop="dateModified" datetime="2019-10-25T15:25:21+08:00">2019-10-25</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Methods-to-Solve-Problem"><a href="#Methods-to-Solve-Problem" class="headerlink" title="Methods to Solve Problem"></a>Methods to Solve Problem</h1><p>In real life, I have encountered many challenges. When the problem first appeared, I was often surprised and confused. But in calming down the initial analysis of the problem, I tried to analyze the problem from the original system. For general problems, it can be alleviated within the original system. However, sometimes the problem is precisely at the root of the system. When I tried many times to solve the problem in the system, the previous one I thought was to strengthen the original system and let the original system overclock to get the relief of the problem. But in practice, the problem caused by the system itself is that such an approach is inefficient and impossible to solve such a problem. Often, such a solution will lead to deeper and deeper within the original system and eventually die within the original system.</p>
+<p>For learning, I have never worried about my original study habits. However, in the face of a big slip, I think this is a personal problem, simply ignore it. However, the slip is getting bigger and bigger and deeper. At this time, I feel that I encountered such a big challenge for the first time. At first, I felt dizzy and felt that it was ridiculous. In the initial attempt, I tried to strengthen the original learning system and overclock the original learning system. However, I found that this did not have a big effect. After the next downturn, I have almost no way to deal with it.</p>
+<p>However, the problems that arise will not disappear in the future and it must be resolved. The ultimate way to overcome the fear of solving this problem is to stand up straight and then face the fear and the problem.</p>
+<p>After the recent blow to my fate, I finally challenged my learning system. Just as quantum theory is to be reborn, the old causal theory must die. Also according to Marxist philosophy, the future of things is bright and the road is tortuous. I carefully analyzed the reason for this slip, and I used to blame my own carelessness, which is the reason for luck. However, several slips clearly told me that this is by no means simple and careless.</p>
+<p>There is a bigger reason for this, which is the basic problem that I did not dare to face before. My intelligence is by no means a problem. This is what I am convinced. However, the basic problems have been revealed more than once since the beginning of the small period. It’s just not too obvious, I can’t get my attention. It can also be said that my intelligence masks the lack of my foundation.</p>
+<p>Once, I told my junior high school information teacher about my carelessness in mathematics. He said that behind many carelessness may be my basic problem. This reminded me for the first time, but I didn’t pay much attention. There is no current ability to analyze problems.</p>
+<p>But in high school, at least for now, this problem has been exposed, and it has fully shown its face. In high school, the comprehensiveness of the test questions has not been the same as that of junior high school. This is a serious test for my foundation. In high school, intelligence has been unable to cover up the serious lack of foundation.</p>
+<p>What is the foundation is the rigor of the solution to the problem, the rigor of the problem-solving operation, and the mastery of simple basic knowledge. Now, I can say without a word that my foundation does have a big problem. This is something I never dared to face before.</p>
+<p>For example, my scientific notation, unit conversion, the concept of basic physical units, mathematical division, etc. have relatively large problems. In the past, I did not consider some subtleties in solving problems. For example, can this take zero, which has no meaning. Especially the basic knowledge, concepts and the like, I have never bothered. I scorned these questions because they were covered up by me at the time. To think of the idea is king, and it will be king. It seems that this is wrong now.</p>
+<p>The lack of learning system has really reminded me that to solve the problem fundamentally, I can only return to the basics and return to what I despise. Despising these things, I paid a heavy price. This also reflects the problem of the method of analyzing my problem. In the face of the problem, there is no careful analysis. I dare not analyze from the fundamentals of the system.</p>
+<p>I now know that the analysis of the problem is not just a matter of encounter. Be sure to find the reason behind it, and always maintain a critical state for your own state. This also shows that setbacks are the best chance to expose problems. In the setbacks, my psychological endurance has been greatly improved.</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2016/10/20/My-thoughts-on-the-Internet-of-Things2/" rel="next" title="My thoughts on the Internet of Things2">
+                  <i class="fa fa-chevron-left"></i> My thoughts on the Internet of Things2
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2017/05/14/God-Engine-Conception/" rel="prev" title="God Engine Conception">
+                  God Engine Conception <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods-to-Solve-Problem"><span class="nav-number">1.</span> <span class="nav-text">Methods to Solve Problem</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Hu Yu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:saturneric@ieee.org" title="E-Mail &amp;rarr; mailto:saturneric@ieee.org" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hu Yu</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/pisces.js?v=7.4.1"></script>
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
